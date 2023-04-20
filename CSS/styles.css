@@ -77,6 +77,38 @@ img {
   transform: scale(0);
 }
 
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--primary-whit-color);
+}
+
+.social-list-icon {
+  fill: #afb1b8;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+
 /* Logo */
 
 .logo {
@@ -182,6 +214,15 @@ img {
   margin-right: 50px;
 }
 
+.contact-link-icon {
+  margin-right: 10px;
+}
+
+.contact-link .connection:hover .contact-link-icon,
+.contact-link .connection:focus .contact-link-icon {
+  fill: var(--accent-color);
+}
+
 /* Hero */
 
 .hero-title {
@@ -206,7 +247,13 @@ img {
 /* Bchero */
 
 .bchero {
-  background-color: #2f303a;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero/Img.jpg");
+  background-size: cover;
+  background-color: #c4c4c4;
 }
 
 /* Section */
@@ -239,6 +286,16 @@ img {
   gap: 30px;
 }
 
+.feature-list-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .feature-list .title {
   color: var(--secondary-text-color);
   font-weight: 700;
@@ -265,9 +322,9 @@ img {
 
 .team-description {
   border-radius: 0px 0px 4px 4px;
-  padding-top: 30px;
-  padding-bottom: 30px;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .member-team .title {
@@ -282,10 +339,52 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.88;
+  margin-bottom: 16px;
 }
 
 .bcteam {
   background-color: #f5f4fa;
+}
+
+/* Clients */
+
+.client-list-item {
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  padding: 16px 32px;
+}
+
+.client-list-item:hover, 
+.client-list-item:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.client-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+
+.client-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 106px;
+  height: 60px;  
+}
+
+.client-list-icon {
+  fill: #AFB1B8;
+}
+
+.client-list-link:hover .client-list-icon, 
+.client-list-link:focus .client-list-icon {
+  fill: var(--accent-color);
 }
 
 /* Footer */
