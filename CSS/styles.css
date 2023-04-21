@@ -73,8 +73,16 @@ img {
 }
 
 .visually-hidden {
-  position: fixed;
-  transform: scale(0);
+  /* position: fixed;
+  transform: scale(0); */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .social-list-item:not(:last-child) {
@@ -87,7 +95,12 @@ img {
   justify-content: center;
   width: 44px;
   height: 44px;
+  background-color: #ffffff;
   border-radius: 50%;
+}
+
+.social-list-link.footer {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-list-link:hover,
@@ -104,9 +117,20 @@ img {
   fill: #afb1b8;
 }
 
+.footer-social-list-icon {
+  fill: #ffffff;
+}
+
 .social-list {
   display: flex;
   justify-content: center;
+}
+
+.footer-social-list {
+  display: block;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
 }
 
 /* Logo */
@@ -142,6 +166,9 @@ img {
 /* Header */
 
 .header {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid #ececec;
 }
 
@@ -247,12 +274,18 @@ img {
 /* Bchero */
 
 .bchero {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
     url("../images/hero/Img.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #c4c4c4;
 }
 
@@ -272,7 +305,15 @@ img {
 }
 
 .title {
-  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.title.footer {
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 /* Feature */
@@ -298,9 +339,7 @@ img {
 
 .feature-list .title {
   color: var(--secondary-text-color);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  margin-bottom: 10px;
 }
 
 .feature-list .text {
@@ -318,6 +357,10 @@ img {
 
 .member-card {
   flex-basis: calc((100% - 4 * 30px) / 4);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-description {
@@ -343,6 +386,9 @@ img {
 }
 
 .bcteam {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f5f4fa;
 }
 
@@ -356,18 +402,19 @@ img {
   padding: 16px 32px;
 }
 
-.client-list-item:hover, 
+.client-list-item:hover,
 .client-list-item:focus {
   border: 1px solid var(--accent-color);
 }
 
-.client-list-item:not(:last-child) {
+/* .client-list-item:not(:last-child) {
   margin-right: 30px;
-}
+} */
 
 .clients-list {
   display: flex;
   justify-content: center;
+  gap: 30px;
 }
 
 .client-list-link {
@@ -375,28 +422,29 @@ img {
   align-items: center;
   justify-content: center;
   width: 106px;
-  height: 60px;  
+  height: 60px;
 }
 
 .client-list-icon {
-  fill: #AFB1B8;
+  fill: #afb1b8;
 }
 
-.client-list-link:hover .client-list-icon, 
-.client-list-link:focus .client-list-icon {
+.client-list-item:hover .client-list-icon,
+.client-list-item:focus .client-list-icon {
   fill: var(--accent-color);
 }
 
 /* Footer */
 
 .footer-container {
-  align-items: start;
-  justify-content: start;
-  flex-direction: column;
+  display: flex;
+  align-items: baseline;
+  gap: 70px;
 }
 
 .adress-item {
   display: flex;
+  width: 231px;
   align-items: start;
   justify-content: start;
   flex-direction: column;
@@ -410,6 +458,10 @@ img {
 .footer.bcfooter {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.contacts {
+  display: block;
 }
 
 .adress {
@@ -436,6 +488,10 @@ img {
 }
 
 .bcfooter {
+  max-width: 1600px;
+  height: 252px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2f303a;
 }
 
@@ -473,6 +529,8 @@ img {
 .button:focus {
   color: var(--primary-whit-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .button.hero {
@@ -514,10 +572,19 @@ img {
   margin-top: -30px;
 }
 
-.robots {
+.robots-item {
   flex-basis: calc((100% - 3 * 30px) / 3);
   margin-left: 30px;
   margin-top: 30px;
+  width: max-content;
+}
+
+.robots-item:hover,
+.robots-item:focus {
+  background: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .robots-wrapper {
@@ -544,4 +611,8 @@ img {
 
 .robots-list .link {
   text-decoration: none;
+}
+
+.robots-link {
+  display: block;
 }
