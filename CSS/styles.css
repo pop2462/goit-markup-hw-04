@@ -590,7 +590,7 @@ img {
 .robots-wrapper {
   border: 1px solid #eeeeee;
   border-top: none;
-  padding: 20px 24px;  
+  padding: 20px 24px;
 }
 
 .robots-list .robots-title {
@@ -599,14 +599,14 @@ img {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-bottom: 4px;  
+  margin-bottom: 4px;
 }
 
 .robots-list .text {
   color: var(--primary-text-color);
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.88;  
+  line-height: 1.88;
 }
 
 /* .robots-list .link, {
